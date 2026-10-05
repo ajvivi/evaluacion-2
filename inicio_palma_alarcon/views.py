@@ -33,7 +33,7 @@ TEMAS = [
         "destacado": False,
         "imagenes": [
             {
-                "archivo": "images/ia2.png",
+                "archivo": "images/ia1.png",
                 "descripcion": "Inteligencia artificial en acción",
             },
             {
