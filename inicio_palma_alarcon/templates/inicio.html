@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block titulo %}Inicio | Explora{% endblock %}
+
+{% block contenido %}
+<section class="presentacion text-center mb-5">
+    <h1>Bienvenido a Explora</h1>
+    <p class="lead mb-0">
+        Elige un tema para conocer más y visitar su galería.
+    </p>
+</section>
+
+{% if temas %}
+    <div class="row g-4">
+        {% for tema in temas %}
+            <div class="col-12 col-md-6">
+                <article class="card h-100 shadow-sm">
+                    <img
+                        src="{% static tema.portada %}"
+                        class="card-img-top imagen-portada"
+                        alt="{{ tema.nombre }}"
+                    >
+
+                    <div class="card-body d-flex flex-column align-items-start">
+                        {% if tema.destacado %}
+                            <span class="badge text-bg-success mb-2">
+                                Tema destacado
+                            </span>
+                        {% endif %}
+
+                        <h2 class="card-title h4">{{ tema.nombre }}</h2>
+
+                        <p class="card-text">
+                            {{ tema.descripcion }}
+                        </p>
+
+                        <a
+                            href="{% url tema.ruta %}"
+                            class="btn btn-primary mt-auto"
+                        >
+                            Explorar {{ tema.nombre }}
+                        </a>
+                    </div>
+                </article>
+            </div>
+        {% endfor %}
+    </div>
+{% else %}
+    <div class="alert alert-info">
+        No hay temas disponibles.
+    </div>
+{% endif %}
+{% endblock %}

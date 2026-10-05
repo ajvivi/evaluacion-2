@@ -1,0 +1,103 @@
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: #f4f6f9;
+    color: #243247;
+    font-family: Arial, sans-serif;
+}
+
+main {
+    flex: 1;
+}
+
+.navbar-brand {
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.nav-link.active {
+    font-weight: 700;
+    text-decoration: underline;
+    text-underline-offset: 6px;
+}
+
+.presentacion {
+    padding: 48px 24px;
+    background-color: #e5edf9;
+    border-radius: 18px;
+}
+
+.presentacion h1 {
+    font-weight: 700;
+    margin-bottom: 16px;
+}
+
+.card {
+    border: 0;
+    border-radius: 16px;
+    overflow: hidden;
+    transition: transform 0.2s ease;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+}
+
+.card-body {
+    padding: 24px;
+}
+
+.imagen-portada {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+
+.imagen-carrusel {
+    height: 460px;
+    object-fit: cover;
+    background-color: #dce3ed;
+}
+
+.control-icono {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.65);
+}
+
+.btn {
+    border-radius: 8px;
+}
+
+footer {
+    font-size: 0.9rem;
+}
+
+@media (max-width: 576px) {
+    .presentacion {
+        padding: 32px 16px;
+    }
+
+    .imagen-portada {
+        height: 210px;
+    }
+
+    .imagen-carrusel {
+        height: 280px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .card {
+        transition: none;
+    }
+
+    .card:hover {
+        transform: none;
+    }
+}

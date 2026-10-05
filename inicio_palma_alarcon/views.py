@@ -9,15 +9,15 @@ TEMAS = [
             "Descubre la importancia de cuidar nuestro entorno."
         ),
         "ruta": "inicio:tema1",
-        "portada": "images/naturaleza1.jpg",
+        "portada": "images/naturaleza1.png",
         "destacado": True,
         "imagenes": [
             {
-                "archivo": "images/naturaleza1.jpg",
+                "archivo": "images/naturaleza1.png",
                 "descripcion": "Paisaje natural con árboles",
             },
             {
-                "archivo": "images/naturaleza2.jpg",
+                "archivo": "images/naturaleza2.png",
                 "descripcion": "Paisaje de montañas",
             },
         ],
@@ -29,16 +29,16 @@ TEMAS = [
             "que forman parte de nuestra vida cotidiana."
         ),
         "ruta": "inicio:tema2",
-        "portada": "images/tecnologia1.jpg",
+        "portada": "images/ia2.png",
         "destacado": False,
         "imagenes": [
             {
-                "archivo": "images/tecnologia1.jpg",
-                "descripcion": "Computador y herramientas digitales",
+                "archivo": "images/ia2.png",
+                "descripcion": "Inteligencia artificial en acción",
             },
             {
-                "archivo": "images/tecnologia2.jpg",
-                "descripcion": "Dispositivos tecnológicos",
+                "archivo": "images/ia2.png",
+                "descripcion": "Robots interactuando con humanos",
             },
         ],
     },

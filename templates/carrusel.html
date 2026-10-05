@@ -1,0 +1,63 @@
+{% load static %}
+
+{% if tema.imagenes %}
+    <div
+        id="galeriaTema"
+        class="carousel slide shadow-sm"
+        role="region"
+        aria-label="Galería de {{ tema.nombre }}"
+    >
+        <div class="carousel-indicators">
+            {% for imagen in tema.imagenes %}
+                <button
+                    type="button"
+                    data-bs-target="#galeriaTema"
+                    data-bs-slide-to="{{ forloop.counter0 }}"
+                    {% if forloop.first %}
+                        class="active"
+                        aria-current="true"
+                    {% endif %}
+                    aria-label="Imagen {{ forloop.counter }}"
+                ></button>
+            {% endfor %}
+        </div>
+
+        <div class="carousel-inner rounded">
+            {% for imagen in tema.imagenes %}
+                <div class="carousel-item {% if forloop.first %}active{% endif %}">
+                    <img
+                        src="{% static imagen.archivo %}"
+                        class="d-block w-100 imagen-carrusel"
+                        alt="{{ imagen.descripcion }}"
+                    >
+                </div>
+            {% endfor %}
+        </div>
+
+        <button
+            class="carousel-control-prev"
+            type="button"
+            data-bs-target="#galeriaTema"
+            data-bs-slide="prev"
+        >
+            <span class="control-icono" aria-hidden="true">
+                <span class="carousel-control-prev-icon"></span>
+            </span>
+            <span class="visually-hidden">Anterior</span>
+        </button>
+
+        <button
+            class="carousel-control-next"
+            type="button"
+            data-bs-target="#galeriaTema"
+            data-bs-slide="next"
+        >
+            <span class="control-icono" aria-hidden="true">
+                <span class="carousel-control-next-icon"></span>
+            </span>
+            <span class="visually-hidden">Siguiente</span>
+        </button>
+    </div>
+{% else %}
+    <p class="alert alert-info">No hay imágenes disponibles.</p>
+{% endif %}
